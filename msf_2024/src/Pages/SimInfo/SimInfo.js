@@ -3,8 +3,8 @@ import { Link } from 'react-router-dom';
 import QuestionView from '../QuestionView/QuestionView';
 import YouTube from 'react-youtube';
 
-export default function AVADemo() { 
-    const [toggleQuestions, setQuestions] = useState(true);
+export default function SimInfo() { 
+    const [toggleQuestions, setQuestions] = useState(false);
     const questions = [
         {
             text: "What do you think?",
@@ -34,7 +34,7 @@ export default function AVADemo() {
   
     return (
         <div>
-            <h1>AVA Demo Page!</h1>
+            <h1>Sim Info Page!</h1>
             {toggleQuestions ? 
             <YouTube videoId="-vJg0fhKrhI" onEnd={() => setQuestions(!toggleQuestions)} options={options} id="video"/> 
             : <QuestionView questions={questions}></QuestionView>}

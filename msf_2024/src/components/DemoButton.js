@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import vemiLogo from "../assets/VEMI-Logo-2020-1024x430.png";
+import another from "../assets/logo.svg";
 import Modal from "react-modal";
 
 const customStyles = {
@@ -23,7 +24,7 @@ const customStyles = {
   
   // Make sure to bind modal to your appElement (https://reactcommunity.org/react-modal/accessibility/)
 Modal.setAppElement('#root');
-export default function DemoButton( { pageID, buttonText, code}) {    
+export default function DemoButton( { pageID, buttonText, code, isCompleted}) {    
     let subtitle;
     const navigate = useNavigate();
 
@@ -67,30 +68,32 @@ export default function DemoButton( { pageID, buttonText, code}) {
 
     return (
         <div>
-            <button onClick={openModal}>
-                <div>
-                    <img src={vemiLogo} alt="VEMI Logo" />
-                    <h2>{buttonText}</h2>
-                </div>
-            </button>
-            <Modal
-            isOpen={modalIsOpen}
-            onAfterOpen={afterOpenModal}
-            onRequestClose={closeModal}
-            style={customStyles}
-            contentLabel="Example Modal"
-            >
+            <div>
+                <button onClick={openModal}>
+                    <div>
+                        <img src={isCompleted ? vemiLogo : another} alt="VEMI Logo" />
+                        <h2>{buttonText}</h2>
+                    </div>
+                </button>
+                <Modal
+                isOpen={modalIsOpen}
+                onAfterOpen={afterOpenModal}
+                onRequestClose={closeModal}
+                style={customStyles}
+                contentLabel="Example Modal"
+                >
+                    
+                <h2 ref={(_subtitle) => (subtitle = _subtitle)} style={customStyles.header}>Enter Code</h2>
                 
-            <h2 ref={(_subtitle) => (subtitle = _subtitle)} style={customStyles.header}>Enter Code</h2>
-            
-            <h3 style={errorText}>incorrect</h3>
-            <form onSubmit={handleSubmit}>
-                <input inputMode="text" value={codeEntered} onChange={(e) => setCodeEntered(e.target.value)} />
-                <input type="submit" />
-            </form>
-            {/* <button onClick={closeModal}>close</button> */}
-            
-        </Modal>
-       </div>
+                <h3 style={errorText}>incorrect</h3>
+                <form onSubmit={handleSubmit}>
+                    <input inputMode="text" value={codeEntered} onChange={(e) => setCodeEntered(e.target.value)} />
+                    <input type="submit" />
+                </form>
+                {/* <button onClick={closeModal}>close</button> */}
+                
+            </Modal>
+        </div>
+    </div>
     );
 }
