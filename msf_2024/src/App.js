@@ -5,6 +5,8 @@ import './App.css';
 import Home from './Pages/Home/Home';
 import Game from './Pages/Game/Game';
 import AVADemo from './Pages/AVADemo/AVADemo';
+import HowToResearch from './Pages/HowToResearch/HowToResearch';
+import SimInfo from './Pages/SimInfo/SimInfo';
 
 function App() {
   return (
@@ -13,6 +15,8 @@ function App() {
         <Route path="/MSF_2024" element={<Home />}/>
         <Route path="/Game" element={<Game />} />
         <Route path="/AVADemo" element={<AVADemo />} />
+        <Route path="/HowToResearch" element={<HowToResearch />} />
+        <Route path="/SimInfo" element={<SimInfo></SimInfo>}/>
       </Routes>
     </div>
   );

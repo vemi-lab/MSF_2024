@@ -24,7 +24,7 @@ const customStyles = {
   
   // Make sure to bind modal to your appElement (https://reactcommunity.org/react-modal/accessibility/)
 Modal.setAppElement('#root');
-export default function DemoButton( { pageID, buttonText, code, isCompleted}) {    
+export default function DemoButton( { pageID, buttonText, code, isCompleted, userData}) {    
     let subtitle;
     const navigate = useNavigate();
 
@@ -59,7 +59,7 @@ export default function DemoButton( { pageID, buttonText, code, isCompleted}) {
             console.log("Page ID: " + pageID)
             toggleVisibility(true);
             // navigate to the next page
-            navigate(pageID);
+            navigate(pageID, {state: {pageID, userData}});
         } else {
             toggleVisibility(false);
             console.log("Code is incorrect");
@@ -68,6 +68,12 @@ export default function DemoButton( { pageID, buttonText, code, isCompleted}) {
 
     return (
         <div>
+           { isCompleted ? 
+           <div>
+                <img src={isCompleted ? vemiLogo : another} alt="VEMI Logo" />
+                <h2>{buttonText}</h2>
+            </div>
+            :
             <div>
                 <button onClick={openModal}>
                     <div>
@@ -94,6 +100,7 @@ export default function DemoButton( { pageID, buttonText, code, isCompleted}) {
                 
             </Modal>
         </div>
+        }
     </div>
     );
 }
