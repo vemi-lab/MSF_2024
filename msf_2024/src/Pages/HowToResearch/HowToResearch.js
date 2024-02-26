@@ -43,8 +43,9 @@ export default function HowToResearch() {
         <div>
             <h1>How To Research Page!</h1>
             {toggleQuestions ? 
+            <QuestionView questions={questions} pageID={state.pageID} currentUserData={state.userData}></QuestionView>:
             <YouTube videoId="-vJg0fhKrhI" onEnd={() => setQuestions(!toggleQuestions)} options={options} id="video"/> 
-            : <QuestionView questions={questions} pageID={state.pageID} currentUserData={state.userData}></QuestionView>}
+            }
         </div>
     );
 }
