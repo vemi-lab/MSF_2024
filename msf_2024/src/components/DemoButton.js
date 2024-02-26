@@ -3,6 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import vemiLogo from "../assets/VEMI-Logo-2020-1024x430.png";
 import another from "../assets/logo.svg";
 import Modal from "react-modal";
+import "./DemoButton.css";
 
 const customStyles = {
     content: {
@@ -16,7 +17,7 @@ const customStyles = {
     },
     header: {
         borderRadius: '10px 10px 0 0',
-        padding: '10px',
+        // padding: '10px',
         textAlign: 'center',
     },
     
@@ -29,12 +30,14 @@ export default function DemoButton( { pageID, buttonText, code, isCompleted, use
     const navigate = useNavigate();
 
     const [modalIsOpen, setIsOpen] = React.useState(false);
-    const [isVisible, setIsVisible] = useState(true);
+    const [isVisible, setIsVisible] = useState(false);
     const [codeEntered, setCodeEntered] = useState("");
+    const [shakeError, setShakeError] = useState(false);
   
     const errorText = {
-        visibility: isVisible ? 'hiden' : 'visible',
         color: 'red',
+        margin: '1px',
+        textAlign: 'center',
     }
     function openModal() {
         setIsOpen(true);
@@ -57,11 +60,15 @@ export default function DemoButton( { pageID, buttonText, code, isCompleted, use
         if(codeEntered === code){
             console.log("Code is correct");
             console.log("Page ID: " + pageID)
-            toggleVisibility(true);
+            toggleVisibility(false);
             // navigate to the next page
             navigate(pageID, {state: {pageID, userData}});
         } else {
-            toggleVisibility(false);
+            toggleVisibility(true);
+            setShakeError(true); // Trigger shake animation on incorrect code entry
+            setTimeout(() => {
+                setShakeError(false); // Reset shake animation after a short delay
+            }, 1000);
             console.log("Code is incorrect");
         }
     }
@@ -90,14 +97,18 @@ export default function DemoButton( { pageID, buttonText, code, isCompleted, use
                 >
                     
                 <h2 ref={(_subtitle) => (subtitle = _subtitle)} style={customStyles.header}>Enter Code</h2>
-                
-                <h3 style={errorText}>incorrect</h3>
-                <form onSubmit={handleSubmit}>
-                    <input inputMode="text" value={codeEntered} onChange={(e) => setCodeEntered(e.target.value)} />
-                    <input type="submit" />
+
+                <form onSubmit={handleSubmit} className="submitForm">
+                    <input inputMode="text" className="codeInput" value={codeEntered} onChange={(e) => setCodeEntered(e.target.value)} />
+                    <br/>
+                    <input type="submit"/>
                 </form>
-                {/* <button onClick={closeModal}>close</button> */}
-                
+                {isVisible ? 
+                <div>
+                    <h3 className={shakeError ? "shake" : ""} style={errorText}>Incorrect</h3>
+                    <h3 className={shakeError ? "shake" : ""} style={errorText}>Try Again</h3> 
+                </div>
+                : <div></div>}
             </Modal>
         </div>
         }
