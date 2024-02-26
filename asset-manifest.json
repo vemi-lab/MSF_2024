@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/MSF_2024/static/css/main.cbdbd63f.css",
-    "main.js": "/MSF_2024/static/js/main.e374449f.js",
+    "main.js": "/MSF_2024/static/js/main.4103aa34.js",
     "static/media/VEMI-Logo-2020-1024x430.png": "/MSF_2024/static/media/VEMI-Logo-2020-1024x430.e1ff06b0dafc3de316a7.png",
     "static/media/logo.svg": "/MSF_2024/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
     "index.html": "/MSF_2024/index.html",
     "main.cbdbd63f.css.map": "/MSF_2024/static/css/main.cbdbd63f.css.map",
-    "main.e374449f.js.map": "/MSF_2024/static/js/main.e374449f.js.map"
+    "main.4103aa34.js.map": "/MSF_2024/static/js/main.4103aa34.js.map"
   },
   "entrypoints": [
     "static/css/main.cbdbd63f.css",
-    "static/js/main.e374449f.js"
+    "static/js/main.4103aa34.js"
   ]
 }
