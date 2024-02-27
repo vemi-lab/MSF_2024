@@ -1,1 +1,16 @@
-
+img {
+  width: 30%;
+  padding: 20px;
+}
+h2 {
+  margin: 20px;
+}
+p {
+  padding: 20px;
+}
+.linkingButton {
+  padding: 15px 30px;
+  font-size: 15px;
+  border-radius: 10px;
+  background-color: gold;
+}
