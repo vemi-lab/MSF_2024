@@ -3,7 +3,7 @@ import { Link, useLocation } from 'react-router-dom';
 import QuestionView from '../QuestionView/QuestionView';
 import YouTube from 'react-youtube';
 
-export default function AVADemo() { 
+export default function SimInfo() { 
     const {state} = useLocation();
     const [toggleQuestions, setQuestions] = useState(false);
     const questions = [
@@ -35,9 +35,9 @@ export default function AVADemo() {
   
     return (
         <div>
-            <h1>AVA Demo Page!</h1>
+            <h1>Sim Info Page!</h1>
             {toggleQuestions ? 
-            <QuestionView questions={questions} pageID={state.pageID} currentUserData={state.userData} ></QuestionView>:
+            <QuestionView questions={questions} pageID={state.pageID} currentUserData={state.userData}></QuestionView>:
             <YouTube videoId="-vJg0fhKrhI" onEnd={() => setQuestions(!toggleQuestions)} options={options} id="video"/> 
             }
         </div>
