@@ -1,23 +1,40 @@
+@import url("https://fonts.googleapis.com/css2?family=Micro+5&family=Pixelify+Sans:wght@400..700&display=swap");
+
 .submitForm {
-    padding: 5px;
-    text-align: center;
+  padding: 5px;
+  text-align: center;
 }
 .codeInput {
-    text-align: center;
-    font-size: large;
-    width: 60%;
-    margin-bottom: 5px;
-    margin-top: 5px;
+  text-align: center;
+  font-size: large;
+  width: 60%;
+  margin-bottom: 5px;
+  margin-top: 5px;
+  font-family: "Micro 5", sans-serif;
+  font-weight: 400;
+  font-style: normal;
 }
 .shake {
-    animation: shake 0.5s;
+  animation: shake 0.5s;
+}
+
+@keyframes shake {
+  0% {
+    transform: translateX(0);
   }
-  
-  @keyframes shake {
-    0% { transform: translateX(0); }
-    20% { transform: translateX(-10px); }
-    40% { transform: translateX(10px); }
-    60% { transform: translateX(-10px); }
-    80% { transform: translateX(10px); }
-    100% { transform: translateX(0); }
+  20% {
+    transform: translateX(-10px);
   }
+  40% {
+    transform: translateX(10px);
+  }
+  60% {
+    transform: translateX(-10px);
+  }
+  80% {
+    transform: translateX(10px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
