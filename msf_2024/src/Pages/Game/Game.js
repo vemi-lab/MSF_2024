@@ -38,7 +38,7 @@ import DemoButton from '../../components/DemoButton';
 export default function Game() {    
     const location = useLocation();
     const [completedPages, setCompletedPages] = useState({});
-    // const [score, setScore] = useState(0);
+    const totalQuestions = 6;
 
     useEffect(() => {
         if (location.state && location.state.userData) {
@@ -60,7 +60,7 @@ export default function Game() {
     return (
         <div>
             <h1>Score</h1>
-            <h2>{location.state!=null ? location.state.userData.score : 0}</h2>
+            <h2>{location.state!=null ? (location.state.userData.score/totalQuestions *100).toPrecision(3) : 0}%</h2>
             {pageIDs.map((id, index) => (
                 <DemoButton
                     key={index}

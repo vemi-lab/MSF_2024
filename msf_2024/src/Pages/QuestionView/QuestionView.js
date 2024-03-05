@@ -7,6 +7,7 @@ export default function QuestionView( { toggleQuestions, questions, pageID, curr
     const [currentQuestion, setCurrentQuestion] = useState(0);
     const [score, setScore] = useState(0);
     const navigate = useNavigate();
+    const totalQuestions = 6;
     const optionClicked = (isCorrect) => {
         if (isCorrect) {
             setScore(prevScore => prevScore + 1); // Use the functional form of setState
@@ -48,7 +49,7 @@ return (
         {showFinalResults ?   
         (  <div>
             <h1>Final Results</h1>
-            <h3>Score: {score + (currentUserData !=null ? currentUserData.score : 0)}</h3>
+            <h3>Score: {((score + (currentUserData !=null ? currentUserData.score: 0))/totalQuestions * 100).toPrecision(3) }%</h3>
                        
             { toggleRestart ?  <></> : <button className="button" onClick={() => navigateToVideo()}>Restart</button> }
             
