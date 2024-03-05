@@ -12,12 +12,11 @@ export default function Home() {
     <div className="container">
       <img src={vemiLogo} alt="VEMI Logo" />
       <h2>Welcome to Duck Chase!</h2>
-      {/*<img src="" alt="Duck chase logo or something?" />*/}
       <p>
         Search around the area for hiddens CODES gain points and win a PRIZE!
       </p>
       <Link to="/game">
-        <button className="linkingButton">Start</button>
+        <button className="button">Start</button>
       </Link>
     </div>
   );
