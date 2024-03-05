@@ -1,8 +1,20 @@
-@import url("https://fonts.googleapis.com/css2?family=Micro+5&family=Pixelify+Sans:wght@400..700&display=swap");
+@font-face {
+  font-family: "Pixel";
+  src: url(../fonts/NeuePixelSans.ttf);
+}
+h2,
+h3,
+input {
+  font-family: "Pixel", sans-serif;
+}
 
+.buttonText {
+  transform: -200px;
+}
 .submitForm {
   padding: 5px;
   text-align: center;
+  font-family: "Pixel", sans-serif;
 }
 .codeInput {
   text-align: center;
@@ -10,9 +22,7 @@
   width: 60%;
   margin-bottom: 5px;
   margin-top: 5px;
-  font-family: "Micro 5", sans-serif;
-  font-weight: 400;
-  font-style: normal;
+  font-family: "Pixel", sans-serif;
 }
 .shake {
   animation: shake 0.5s;

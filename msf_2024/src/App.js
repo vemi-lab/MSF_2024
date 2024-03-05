@@ -1,7 +1,6 @@
 import * as React from "react";
 import { Routes, Route } from "react-router-dom";
 import "./App.css";
-import "./fonts/Pixeled.ttf";
 import "./fonts/NeuePixelSans.ttf";
 
 import Home from "./Pages/Home/Home";
