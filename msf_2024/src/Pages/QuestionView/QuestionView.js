@@ -47,7 +47,7 @@ return (
             <h1>Final Results</h1>
             <h3>Score: {score + (currentUserData !=null ? currentUserData.score : 0)}</h3>
                        
-            { toggleRestart ?  <></> : <button onClick={() => navigateToVideo()}>Restart</button> }
+            { toggleRestart ?  <></> : <button className="button" onClick={() => navigateToVideo()}>Restart</button> }
             
             <button className="button" onClick={() => navigateGame()}>Next</button>
         </div>) 
