@@ -84,7 +84,9 @@ export default function DemoButton({
       {isCompleted ? (
         <div className="badge">
           <img src={duck} alt="Colored duck logo" />
-          <p className="doneText text">{buttonText}</p>
+          <p className="text" id="doneText">
+            {buttonText}
+          </p>
         </div>
       ) : (
         <div>

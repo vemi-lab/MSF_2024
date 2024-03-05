@@ -30,8 +30,8 @@ img {
   align-items: center;
   justify-content: space-between;
 }
-.doneText {
-  color: gold;
+#doneText {
+  color: #ffd700;
 }
 .text {
   font-size: calc(10px + 2vmin);
