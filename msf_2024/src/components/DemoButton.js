@@ -88,7 +88,7 @@ export default function DemoButton({
         </div>
       ) : (
         <div>
-          <button onClick={openModal}>
+          <button className="badgeButton" onClick={openModal}>
             <div className="badge">
               <img src={greyDuck} alt="Gray duck logo" />
               <p className="text">{buttonText}</p>
@@ -115,7 +115,7 @@ export default function DemoButton({
                 onChange={(e) => setCodeEntered(e.target.value)}
               />
               <br />
-              <input type="submit" />
+              <input type="submit" className="button" />
             </form>
             {isVisible ? (
               <div>

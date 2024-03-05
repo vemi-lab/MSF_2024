@@ -16,7 +16,7 @@ export default function Home() {
         Search around the area for hiddens CODES gain points and win a PRIZE!
       </p>
       <Link to="/game">
-        <button className="linkingButton">Start</button>
+        <button className="button">Start</button>
       </Link>
     </div>
   );

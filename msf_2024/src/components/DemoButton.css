@@ -13,7 +13,14 @@ img {
   margin: 0;
   width: 100px;
 }
-button {
+.button {
+  background-color: #ffd700;
+  color: #282c34;
+  font-size: 20px;
+  padding: 10px 20px;
+  border-radius: 15px;
+}
+.badgeButton {
   background-color: transparent;
   border: none;
 }
