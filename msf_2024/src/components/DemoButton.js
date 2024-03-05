@@ -14,11 +14,8 @@ const customStyles = {
     marginRight: "-50%",
     transform: "translate(-50%, -50%)",
     borderRadius: "10px",
-    //backgroundColor: "gold",
   },
   header: {
-    borderRadius: "10px 10px 0 0",
-    // padding: '10px',
     textAlign: "center",
   },
 };

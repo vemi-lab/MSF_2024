@@ -40,7 +40,6 @@ img {
   padding: 0;
 }
 .submitForm {
-  padding: 5px;
   text-align: center;
   font-family: "Pixel", sans-serif;
 }
@@ -48,9 +47,9 @@ img {
   text-align: center;
   font-size: large;
   width: 60%;
-  margin-bottom: 5px;
-  margin-top: 5px;
+  margin-bottom: 30px;
   font-family: "Pixel", sans-serif;
+  border: 3px solid #ffd700;
 }
 .shake {
   animation: shake 0.5s;
