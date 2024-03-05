@@ -83,15 +83,15 @@ export default function DemoButton({
     <div>
       {isCompleted ? (
         <div className="badge">
-          <img src={duck} alt="Colored duck picture" />
-          <p className="doneText">{buttonText}</p>
+          <img src={duck} alt="Colored duck logo" />
+          <p className="doneText text">{buttonText}</p>
         </div>
       ) : (
         <div>
           <button onClick={openModal}>
             <div className="badge">
               <img src={greyDuck} alt="Gray duck logo" />
-              <p>{buttonText}</p>
+              <p className="text">{buttonText}</p>
             </div>
           </button>
           <Modal
