@@ -1,3 +1,8 @@
+@font-face {
+  font-family: "Pixel";
+  src: url(../../fonts/NeuePixelSans.ttf);
+}
+
 img {
   width: 30%;
   padding: 20px;
@@ -10,7 +15,9 @@ p {
 }
 .linkingButton {
   padding: 15px 30px;
-  font-size: 15px;
+  font-size: 20px;
   border-radius: 10px;
   background-color: gold;
+  color: #15223d;
+  font-family: "Pixel", sans-serif;
 }

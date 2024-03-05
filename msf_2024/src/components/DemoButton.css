@@ -1,23 +1,62 @@
+@font-face {
+  font-family: "Pixel";
+  src: url(../fonts/NeuePixelSans.ttf);
+}
+h2,
+h3,
+input {
+  font-family: "Pixel", sans-serif;
+}
+p {
+  font-size: 20px;
+  color: gray;
+}
+button {
+  background-color: transparent;
+  border: none;
+}
+.badge {
+  display: flex;
+  justify-content: baseline;
+  align-items: center;
+}
+.doneText {
+  color: gold;
+}
 .submitForm {
-    padding: 5px;
-    text-align: center;
+  padding: 5px;
+  text-align: center;
+  font-family: "Pixel", sans-serif;
 }
 .codeInput {
-    text-align: center;
-    font-size: large;
-    width: 60%;
-    margin-bottom: 5px;
-    margin-top: 5px;
+  text-align: center;
+  font-size: large;
+  width: 60%;
+  margin-bottom: 5px;
+  margin-top: 5px;
+  font-family: "Pixel", sans-serif;
 }
 .shake {
-    animation: shake 0.5s;
+  animation: shake 0.5s;
+}
+
+@keyframes shake {
+  0% {
+    transform: translateX(0);
   }
-  
-  @keyframes shake {
-    0% { transform: translateX(0); }
-    20% { transform: translateX(-10px); }
-    40% { transform: translateX(10px); }
-    60% { transform: translateX(-10px); }
-    80% { transform: translateX(10px); }
-    100% { transform: translateX(0); }
+  20% {
+    transform: translateX(-10px);
   }
+  40% {
+    transform: translateX(10px);
+  }
+  60% {
+    transform: translateX(-10px);
+  }
+  80% {
+    transform: translateX(10px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
