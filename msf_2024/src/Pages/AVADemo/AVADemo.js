@@ -11,8 +11,8 @@ export default function AVADemo() {
             text: "What do you think?",
             options: [
                 {id: 0, text: "Answer 1", isCorrect: false},
-                {id: 1, text: "Answer 2", isCorrect: false},
-                {id: 2, text: "Answer 3", isCorrect: true}
+                {id: 1, text: "Answer 2", isCorrect: true},
+                {id: 2, text: "Answer 3", isCorrect: false}
             ]
         },
         {

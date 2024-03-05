@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import "./QuestionView.css";
 export default function QuestionView( { toggleQuestions, questions, pageID, currentUserData}) {
@@ -14,14 +14,17 @@ export default function QuestionView( { toggleQuestions, questions, pageID, curr
         if (currentQuestion + 1 < questions.length) {
             setCurrentQuestion(currentQuestion + 1);
         } else {
-            if (score + 1 >= questions.length) { // Check score + 1
-                setRestart(true);
-                console.log("HIDE Restart");
-            }
-            console.log("Questions: " + (score + 1)); // Update this line as well
             setFinalResults(true);
         }
     }
+    useEffect(() => {
+        if (score >= questions.length) {
+            setRestart(true);
+            console.log("HIDE Restart");
+        }
+        console.log("Questions: " + score);
+    }, [score, questions.length]);
+    
     
     function navigateGame() {
         const currentScore = currentUserData !=null ? currentUserData.score : 0;
