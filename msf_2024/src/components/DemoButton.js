@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
-import vemiLogo from "../assets/DuckLogo.png";
-import another from "../assets/Gray_DuckLogo.png";
+import { useNavigate } from "react-router-dom";
+import duck from "../assets/DuckLogo.png";
+import greyDuck from "../assets/Gray_DuckLogo.png";
 import Modal from "react-modal";
 import "./DemoButton.css";
 
@@ -82,21 +82,20 @@ export default function DemoButton({
   return (
     <div>
       {isCompleted ? (
-        <div>
-          <img src={isCompleted ? vemiLogo : another} alt="VEMI Logo" />
-          <h2>{buttonText}</h2>
+        <div className="badge">
+          <img src={duck} alt="Colored duck picture" />
+          <p className="doneText">{buttonText}</p>
         </div>
       ) : (
         <div>
           <button onClick={openModal}>
-            <div>
-              <img src={isCompleted ? vemiLogo : another} alt="VEMI Logo" />
-              <h2 className="buttonText">{buttonText}</h2>
+            <div className="badge">
+              <img src={greyDuck} alt="Gray duck logo" />
+              <p>{buttonText}</p>
             </div>
           </button>
           <Modal
             isOpen={modalIsOpen}
-            onAfterOpen={afterOpenModal}
             onRequestClose={closeModal}
             style={customStyles}
             contentLabel="Example Modal"

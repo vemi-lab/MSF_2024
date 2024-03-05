@@ -7,9 +7,21 @@ h3,
 input {
   font-family: "Pixel", sans-serif;
 }
-
-.buttonText {
-  transform: -200px;
+p {
+  font-size: 20px;
+  color: gray;
+}
+button {
+  background-color: transparent;
+  border: none;
+}
+.badge {
+  display: flex;
+  justify-content: baseline;
+  align-items: center;
+}
+.doneText {
+  color: gold;
 }
 .submitForm {
   padding: 5px;
