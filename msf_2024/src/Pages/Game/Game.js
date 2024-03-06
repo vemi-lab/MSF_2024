@@ -6,6 +6,7 @@ export default function Game() {
     const location = useLocation();
     const [completedPages, setCompletedPages] = useState({});
     const [showEndScreen, setShowEndScreen] = useState(false);
+    const [completedQuestions, setCompletedQuestions] = useState(1);
     const totalQuestions = 6;
 
     useEffect(() => {
@@ -13,6 +14,7 @@ export default function Game() {
             checkForCompletedPage();
         }
         checkForEndOfGame();
+        checkForCompletedQuestions();
     }, [location]);
 
     function checkForCompletedPage() {
@@ -30,12 +32,18 @@ export default function Game() {
             setShowEndScreen(true);
         }
     }
+
+    function checkForCompletedQuestions(){
+        const completedQuestionNum = location.state != null ? location.state.userData.completedQuestions : 1;
+        setCompletedQuestions(completedQuestionNum);
+    }
+
     const pageIDs = ["/AVADemo", "/HowToResearch", "/SimInfo"];
 
     return (
         <div>
             {( showEndScreen ? <h1>Congratulations</h1> : <h1>Score</h1>)}
-            {( showEndScreen ? <h2>Final Score {location.state!=null ? (location.state.userData.score/totalQuestions * 100).toPrecision(3) : 0}%</h2>: <h2>{location.state!=null ? (location.state.userData.score/totalQuestions * 100).toPrecision(3) : 0}%</h2>)}
+            {( showEndScreen ? <h2>Final Score {location.state!=null ? (location.state.userData.score/totalQuestions * 100).toPrecision(3) : 0}%</h2>: <h2>{location.state!=null ? (location.state.userData.score/completedQuestions * 100).toPrecision(3) : 0}%</h2>)}
             
             {( showEndScreen ? <></>: pageIDs.map((id, index) => (
                 <DemoButton
