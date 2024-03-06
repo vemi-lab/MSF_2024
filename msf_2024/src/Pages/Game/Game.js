@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import DemoButton from '../../components/DemoButton';
+import ReactConfetti from 'react-confetti';
 
 export default function Game() {
     const location = useLocation();
@@ -44,8 +45,8 @@ export default function Game() {
         <div>
             {( showEndScreen ? <h1>Congratulations</h1> : <h1>Score</h1>)}
             {( showEndScreen ? <h2>Final Score {location.state!=null ? (location.state.userData.score/totalQuestions * 100).toPrecision(3) : 0}%</h2>: <h2>{location.state!=null ? (location.state.userData.score/completedQuestions * 100).toPrecision(3) : 0}%</h2>)}
-            
-            {( showEndScreen ? <></>: pageIDs.map((id, index) => (
+           
+            {( showEndScreen ?  <ReactConfetti/>: pageIDs.map((id, index) => (
                 <DemoButton
                     key={index}
                     userData={location.state!=null ? location.state.userData : null}
