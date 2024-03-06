@@ -1,36 +1,3 @@
-// import React from 'react';
-// import { useLocation } from 'react-router-dom';
-// import DemoButton from '../../components/DemoButton';
-
-// export default function Game( { props }) {    
-//     const location = useLocation();
-//     console.log(location);
-//     function startExperience(){
-//         console.log("Show Demo");
-//         // navigate to the next page
-//     }
-//     const pageIDs = ["/AVADemo","/HowToResearch","/SimInfo"];
-
-//     function checkForCompletedPage(){
-//         for (id in location.state.pageID){
-//             if (pageIDs.includes(id)){
-//                 // Set page to completed
-
-//             } else {
-//                 // Set page to uncomplete
-//             }
-//         }
-//     }
-//     return (
-//         <div>
-//             <h1>Score</h1>
-//             <h2>{location.state.score ? location.state.score : 0}</h2>
-//             <DemoButton pageID={pageIDs[0]} buttonText="AVA Demo" code="15070" isCompleted={false}/>
-//             <DemoButton pageID={pageIDs[1]} buttonText="How To Research" code="68978" isCompleted={true}/>
-//             <DemoButton pageID={pageIDs[2]} buttonText="SIM Info" code="74343" isCompleted={true}/>
-//         </div>
-//     );
-// }
 import React, { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import DemoButton from '../../components/DemoButton';
