@@ -29,13 +29,15 @@ export default function QuestionView( { toggleQuestions, questions, pageID, curr
     function navigateGame() {
         const currentScore = currentUserData !=null ? currentUserData.score : 0;
         const updatedScore = score + currentScore;
+        const currentCompletedQuestions = currentUserData !=null ? currentUserData.completedQuestions : 0;
+        const updatedCompletedQuestions = currentCompletedQuestions + questions.length;
         var newCompletedDemos = [pageID];
         if (currentUserData !=null) {
             currentUserData.completedDemos.push(pageID)
             newCompletedDemos = currentUserData.completedDemos;
         }
         console.log(newCompletedDemos);
-        const userData = {completedDemos: newCompletedDemos, score: updatedScore}
+        const userData = {completedDemos: newCompletedDemos, score: updatedScore, completedQuestions: updatedCompletedQuestions}
         navigate("/Game", {replace: true, state: {userData}});
     }
     function navigateToVideo(){
@@ -48,7 +50,7 @@ return (
         {showFinalResults ?   
         (  <div>
             <h1>Final Results</h1>
-            <h3>Score: {((score + (currentUserData !=null ? currentUserData.score: 0))/questions.length * 100).toPrecision(3) }%</h3>
+            <h3>Score: {((score)/questions.length * 100).toPrecision(3) }%</h3>
                        
             { toggleRestart ?  <></> : <button className="button" onClick={() => navigateToVideo()}>Restart</button> }
             
