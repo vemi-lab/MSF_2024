@@ -84,6 +84,7 @@ export default function DemoButton({
           <p className="text" id="doneText">
             {buttonText}
           </p>
+          <p className="text" id="doneText">completed</p>
         </div>
       ) : (
         <div>
