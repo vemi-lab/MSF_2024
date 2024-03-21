@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import QuestionView from '../QuestionView/QuestionView';
 import YouTube from 'react-youtube';
+import ReactPlayer from 'react-player/youtube';
+import "../DemoPages.css";
 
 export default function Catheters() { 
     const {state} = useLocation();
@@ -46,11 +48,11 @@ export default function Catheters() {
       };
   
     return (
-        <div>
+        <div className='video-card'>
             <h1>Catheters Page!</h1>
             {toggleQuestions ? 
             <QuestionView toggleQuestions={setQuestions} questions={questions} pageID={state.pageID} currentUserData={state.userData} ></QuestionView>:
-            <YouTube videoId="-vJg0fhKrhI" onEnd={() => setQuestions(!toggleQuestions)} options={options} id="video"/> 
+            <ReactPlayer onEnded={() => setQuestions(!toggleQuestions)} width="100%" url='https://www.youtube.com/watch?v=-vJg0fhKrhI'></ReactPlayer>
             }
         </div>
     );

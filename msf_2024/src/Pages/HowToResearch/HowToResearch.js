@@ -2,13 +2,8 @@ import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import QuestionView from '../QuestionView/QuestionView';
 import YouTube from 'react-youtube';
-///   useData {
-// 
-// }
-///   
-///
-///
-///
+import "../DemoPages.css";
+
 export default function HowToResearch() { 
     const {state} = useLocation();
     const [toggleQuestions, setQuestions] = useState(false);
@@ -52,7 +47,7 @@ export default function HowToResearch() {
       };
   
     return (
-        <div>
+        <div className='video-card'>
             <h1>How To Research Page!</h1>
             {toggleQuestions ? 
             <QuestionView toggleQuestions={setQuestions} questions={questions} pageID={state.pageID} currentUserData={state.userData}></QuestionView>:

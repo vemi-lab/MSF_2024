@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import QuestionView from '../QuestionView/QuestionView';
 import YouTube from 'react-youtube';
+import "../DemoPages.css";
 
 export default function Rainbows() { 
     const {state} = useLocation();
@@ -46,7 +47,7 @@ export default function Rainbows() {
       };
   
     return (
-        <div>
+        <div className='video-card'>
             <h1>Rainbows Page!</h1>
             {toggleQuestions ? 
             <QuestionView toggleQuestions={setQuestions} questions={questions} pageID={state.pageID} currentUserData={state.userData} ></QuestionView>:
