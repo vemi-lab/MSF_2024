@@ -41,21 +41,25 @@ export default function PFAS() {
         },
     ];
     const options = {
-        height: '390',
-        width: '640',
-        playerVars: {
-          autoplay: 1,
-          controls: 1,
-        },
+        width:'100%',
+        height:'100%',
       };
   
     return (
         <div>
-            <h1>Rainbows!</h1>
+            <h1>PFAS Page!</h1>
             {toggleQuestions ? 
             <QuestionView toggleQuestions={setQuestions} questions={questions} pageID={state.pageID} currentUserData={state.userData} ></QuestionView>:
             <YouTube videoId="-vJg0fhKrhI" onEnd={() => setQuestions(!toggleQuestions)} options={options} id="video"/> 
-            }
+            // <ReactPlayer
+            // className='react-player'
+            // width="100%"
+            // height="100%"
+            // url= {video}
+            // controls = {true}
+            // onEnded={() => setQuestions(!toggleQuestions)}
+            // />
+           }
         </div>
     );
 }

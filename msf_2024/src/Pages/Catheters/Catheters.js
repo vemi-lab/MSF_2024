@@ -51,7 +51,7 @@ export default function Catheters() {
   
     return (
         <div>
-            <h1>Catheters!</h1>
+            <h1>Catheters Page!</h1>
             {toggleQuestions ? 
             <QuestionView toggleQuestions={setQuestions} questions={questions} pageID={state.pageID} currentUserData={state.userData} ></QuestionView>:
             <YouTube videoId="-vJg0fhKrhI" onEnd={() => setQuestions(!toggleQuestions)} options={options} id="video"/> 

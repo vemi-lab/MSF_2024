@@ -20,7 +20,7 @@ export default function Game() {
 
     function checkForCompletedPage() {
         const completed = {};
-        for (const id of pageIDs) {
+        for (const id of pageInfo.pageIDs) {
             completed[id] = location.state.userData.completedDemos.includes(id);
         }
         console.log(completed);
@@ -29,7 +29,7 @@ export default function Game() {
 
     function checkForEndOfGame(){
         const numCompletedDemos= location.state !=null ? location.state.userData.completedDemos.length : 0;
-        if(numCompletedDemos == pageIDs.length){
+        if(numCompletedDemos == pageInfo.pageIDs.length){
             setShowEndScreen(true);
         }
     }
@@ -39,20 +39,24 @@ export default function Game() {
         setCompletedQuestions(completedQuestionNum);
     }
 
-    const pageIDs = ["/AVADemo", "/HowToResearch", "/SimInfo"];
+    const pageInfo = {
+        pageIDs: ["/Catheters", "/HowToResearch", "/SimInfo", "/PFAS", "/Rainbows", "/Ultrahaptics"],
+        pageNames: ["Catheters", "How To Research", "Autonomous Simulator", "PFAS", "Rainbows", "Ultrahaptics"],
+        pageCodes: ["15070", "68978", "74343", "81294", "98765", "23564"]
+    };
 
     return (
         <div>
             {( showEndScreen ? <h1>Congratulations</h1> : <h1>Score</h1>)}
-            {( showEndScreen ? <h2>Final Score {location.state!=null ? (location.state.userData.score/totalQuestions * 100).toPrecision(3) : 0}%</h2>: <h2>{location.state!=null ? (location.state.userData.score/completedQuestions * 100).toPrecision(3) : 0}%</h2>)}
+            {( showEndScreen ? <h2>Final Score {location.state!=null ? (location.state.userData.score/completedQuestions * 100).toPrecision(3) : 0}%</h2> : <h2>{location.state!=null ? (location.state.userData.score/completedQuestions * 100).toPrecision(3) : 0}%</h2>)}
            
-            {( showEndScreen ?  <ReactConfetti/>: pageIDs.map((id, index) => (
+            {( showEndScreen ?  <ReactConfetti/>: pageInfo.pageIDs.map((id, index) => (
                 <DemoButton
                     key={index}
                     userData={location.state!=null ? location.state.userData : null}
                     pageID={id}
-                    buttonText={id === "/AVADemo" ? "AVA Demo" : id === "/HowToResearch" ? "How To Research" : "SIM Info"}
-                    code={id === "/AVADemo" ? "15070" : id === "/HowToResearch" ? "68978" : "74343"}
+                    buttonText={pageInfo.pageNames[index]}
+                    code={pageInfo.pageCodes[index]}
                     isCompleted={completedPages[id] || false}
                 />
             )))}

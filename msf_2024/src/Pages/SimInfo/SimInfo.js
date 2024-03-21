@@ -51,7 +51,7 @@ export default function SimInfo() {
   
     return (
         <div>
-            <h1>Sim Info Page!</h1>
+            <h1>Autonomous Simulator Page!</h1>
             {toggleQuestions ? 
             <QuestionView toggleQuestions={setQuestions} questions={questions} pageID={state.pageID} currentUserData={state.userData}></QuestionView>:
             <YouTube videoId="-vJg0fhKrhI" onEnd={() => setQuestions(!toggleQuestions)} options={options} id="video"/> 
