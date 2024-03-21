@@ -51,14 +51,6 @@ export default function PFAS() {
             {toggleQuestions ? 
             <QuestionView toggleQuestions={setQuestions} questions={questions} pageID={state.pageID} currentUserData={state.userData} ></QuestionView>:
             <YouTube videoId="-vJg0fhKrhI" onEnd={() => setQuestions(!toggleQuestions)} options={options} id="video"/> 
-            // <ReactPlayer
-            // className='react-player'
-            // width="100%"
-            // height="100%"
-            // url= {video}
-            // controls = {true}
-            // onEnded={() => setQuestions(!toggleQuestions)}
-            // />
            }
         </div>
     );
