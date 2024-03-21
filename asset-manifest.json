@@ -1,18 +1,20 @@
 {
   "files": {
-    "main.css": "/MSF_2024/static/css/main.9453b99a.css",
-    "main.js": "/MSF_2024/static/js/main.00e42ff5.js",
+    "main.css": "/MSF_2024/static/css/main.77a9c129.css",
+    "main.js": "/MSF_2024/static/js/main.6709da23.js",
+    "reactPlayerPreview.js": "/MSF_2024/static/js/reactPlayerPreview.a119c178.chunk.js",
     "static/media/Gray_DuckLogo.png": "/MSF_2024/static/media/Gray_DuckLogo.252c317f0ba594623620.png",
     "static/media/Pixeled.ttf": "/MSF_2024/static/media/Pixeled.0466f3371bc9b28affef.ttf",
     "static/media/DuckLogo.png": "/MSF_2024/static/media/DuckLogo.65b1cb50518a2f2fe3f3.png",
     "static/media/VEMI-Logo-2020-1024x430.png": "/MSF_2024/static/media/VEMI-Logo-2020-1024x430.e1ff06b0dafc3de316a7.png",
     "static/media/NeuePixelSans.ttf": "/MSF_2024/static/media/NeuePixelSans.3ab4948e3c491b666d28.ttf",
     "index.html": "/MSF_2024/index.html",
-    "main.9453b99a.css.map": "/MSF_2024/static/css/main.9453b99a.css.map",
-    "main.00e42ff5.js.map": "/MSF_2024/static/js/main.00e42ff5.js.map"
+    "main.77a9c129.css.map": "/MSF_2024/static/css/main.77a9c129.css.map",
+    "main.6709da23.js.map": "/MSF_2024/static/js/main.6709da23.js.map",
+    "reactPlayerPreview.a119c178.chunk.js.map": "/MSF_2024/static/js/reactPlayerPreview.a119c178.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.9453b99a.css",
-    "static/js/main.00e42ff5.js"
+    "static/css/main.77a9c129.css",
+    "static/js/main.6709da23.js"
   ]
 }
