@@ -3,7 +3,7 @@ import { Link, useLocation } from 'react-router-dom';
 import QuestionView from '../QuestionView/QuestionView';
 import YouTube from 'react-youtube';
 
-export default function AVADemo() { 
+export default function Ultrahaptics() { 
     const {state} = useLocation();
     const [toggleQuestions, setQuestions] = useState(false);
     const questions = [
