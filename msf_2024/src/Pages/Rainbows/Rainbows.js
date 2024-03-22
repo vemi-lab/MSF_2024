@@ -51,7 +51,7 @@ export default function Rainbows() {
             <h1>Rainbows Page!</h1>
             {toggleQuestions ? 
             <QuestionView toggleQuestions={setQuestions} questions={questions} pageID={state.pageID} currentUserData={state.userData} ></QuestionView>:
-            <YouTube videoId="-vJg0fhKrhI" onEnd={() => setQuestions(!toggleQuestions)} options={options} id="video"/> 
+            <YouTube videoId="OHRnJ7XiOIE" onEnd={() => setQuestions(!toggleQuestions)} options={options} id="video"/> 
             }
         </div>
     );
