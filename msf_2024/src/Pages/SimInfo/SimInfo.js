@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import QuestionView from '../QuestionView/QuestionView';
 import YouTube from 'react-youtube';
+import ReactPlayer from 'react-player/youtube';
 import "../DemoPages.css";
 
 export default function SimInfo() { 
@@ -51,7 +52,9 @@ export default function SimInfo() {
             <h1>Autonomous Simulator Page!</h1>
             {toggleQuestions ? 
             <QuestionView toggleQuestions={setQuestions} questions={questions} pageID={state.pageID} currentUserData={state.userData}></QuestionView>:
-            <YouTube videoId="1k_odA-x0ck" onEnd={() => setQuestions(!toggleQuestions)} options={options} id="video"/> 
+            <ReactPlayer onEnded={() => setQuestions(!toggleQuestions)} width="100%" url='https://www.youtube.com/watch?v=1k_odA-x0ck'></ReactPlayer>
+
+            // <YouTube videoId="1k_odA-x0ck" onEnd={() => setQuestions(!toggleQuestions)} options={options} id="video"/> 
             }
         </div>
     );

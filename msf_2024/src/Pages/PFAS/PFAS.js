@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import QuestionView from '../QuestionView/QuestionView';
 import YouTube from 'react-youtube';
+import ReactPlayer from 'react-player/youtube';
 import "../DemoPages.css";
 
 export default function PFAS() { 
@@ -51,7 +52,8 @@ export default function PFAS() {
             <h1>PFAS Page!</h1>
             {toggleQuestions ? 
             <QuestionView toggleQuestions={setQuestions} questions={questions} pageID={state.pageID} currentUserData={state.userData} ></QuestionView>:
-            <YouTube videoId="fa5a7vqDp_s" onEnd={() => setQuestions(!toggleQuestions)} options={options} id="video"/> 
+            <ReactPlayer onEnded={() => setQuestions(!toggleQuestions)} width="100%" url='https://www.youtube.com/watch?v=fa5a7vqDp_s'></ReactPlayer>
+            // <YouTube videoId="fa5a7vqDp_s" onEnd={() => setQuestions(!toggleQuestions)} options={options} id="video"/> 
            }
         </div>
     );

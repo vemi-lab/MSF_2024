@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import QuestionView from '../QuestionView/QuestionView';
 import YouTube from 'react-youtube';
+import ReactPlayer from 'react-player/youtube';
 import "../DemoPages.css";
 
 export default function Ultrahaptics() { 
@@ -51,7 +52,8 @@ export default function Ultrahaptics() {
             <h1>Ultrahaptics Page!</h1>
             {toggleQuestions ? 
             <QuestionView toggleQuestions={setQuestions} questions={questions} pageID={state.pageID} currentUserData={state.userData} ></QuestionView>:
-            <YouTube videoId="ZJ_bClbp9y0" onEnd={() => setQuestions(!toggleQuestions)} options={options} id="video"/> 
+            <ReactPlayer onEnded={() => setQuestions(!toggleQuestions)} width="100%" url='https://www.youtube.com/watch?v=ZJ_bClbp9y0'></ReactPlayer>
+            // <YouTube videoId="ZJ_bClbp9y0" onEnd={() => setQuestions(!toggleQuestions)} options={options} id="video"/> 
             }
         </div>
     );

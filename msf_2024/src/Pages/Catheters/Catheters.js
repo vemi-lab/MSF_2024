@@ -52,7 +52,7 @@ export default function Catheters() {
             <h1>Catheters Page!</h1>
             {toggleQuestions ? 
             <QuestionView toggleQuestions={setQuestions} questions={questions} pageID={state.pageID} currentUserData={state.userData} ></QuestionView>:
-            <YouTube videoId="7skD9vBoK5U" onEnd={() => setQuestions(!toggleQuestions)} options={options} id="video"/> 
+            <ReactPlayer onEnded={() => setQuestions(!toggleQuestions)} width="100%" url='https://www.youtube.com/watch?v=7skD9vBoK5U'></ReactPlayer>
             }
         </div>
     );
